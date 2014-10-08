@@ -1,8 +1,23 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="RentHouseTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:buttonStyle">@style/buttonsText</item>
+        <item name="android:actionBarStyle">@style/actionBar</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="buttonsText" parent="android:Widget.Button">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="actionBar" parent="android:Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/actionbar_background</item>
+        <item name="android:titleTextStyle">@style/actionBarTitleTextStyle</item>
+    </style>
+
+    <style name="actionBarTitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

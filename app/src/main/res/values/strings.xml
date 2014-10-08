@@ -2,7 +2,20 @@
 <resources>
 
     <string name="app_name">RentHouse</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
+    <!-- HomeScreenFg Common -->
+    <string name="fg_homescreen_buy">Buy</string>
+    <string name="fg_homescreen_sell">Sell</string>
+    <string name="fg_homescreen_for_buy">Buy</string>
+    <string name="fg_homescreen_for_sell">Sell</string>
+    <string name="fg_homescreen_properties">My Properties</string>
+    <string name="fg_homescreen_jobs">My Jobs</string>
+    <string name="fg_homescreen_favorites">My Favorites</string>
+    <string name="fg_homescreen_profile">Profile</string>
+    <string name="fg_homescreen_exit">Exit</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="fg_propertyFilters_category">
+        <item name="default">Property category</item>
+    </string-array>
 </resources>
