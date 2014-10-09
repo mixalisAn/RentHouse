@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="130dp"
+    android:padding="10dp"
     android:background="@color/theme_background">
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="120dp"
+        android:src="@drawable/list_house"
+        android:layout_alignParentLeft="true"
+        android:scaleType="centerInside"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/listItemProperty_imageView"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/listItemProperty_imageView"
+        android:id="@+id/listItemProperty_details1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/listItemProperty_details2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New"
+            android:padding="5dp"
+            android:id="@+id/listItemProperty_condition"
+            android:layout_above="@+id/listItemProperty_address"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anthimou Gazi 3"
+            android:maxLines="2"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/listItemProperty_address"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:id="@+id/listItemProperty_details2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3000Euro"
+            android:layout_gravity="right"
+            android:textStyle="bold"
+            android:id="@+id/listItemProperty_cost"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="80sqm"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            android:id="@+id/listItemProperty_sqm"/>
+
+    </LinearLayout>
+</RelativeLayout>

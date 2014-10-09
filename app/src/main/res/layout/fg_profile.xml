@@ -45,8 +45,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
-                android:text="Rating: 5/5"/>
-            </LinearLayout>
+                android:text="Rating:"/>
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/ratingBar" />
+        </LinearLayout>
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"

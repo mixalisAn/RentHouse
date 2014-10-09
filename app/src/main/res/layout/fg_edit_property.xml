@@ -1,10 +1,371 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/theme_background">
+    android:background="@color/theme_background"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp">
+
+    <Spinner
+        android:id="@+id/fg_editProperty_advertType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/fg_editProperty_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/fg_editProperty_agent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:stretchColumns="2,3">
+
+        <TableRow>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="0.4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="Address details" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Prefecture: " />
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Area: " />
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Address: " />
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Postal code: " />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:stretchColumns="2,3">
+
+        <TableRow>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="0.4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="Other details" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Price: " />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Sq meters: " />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Name:" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Build date: " />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="date" />
+
+        </TableRow>
+        <TableRow android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="Available from: " />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="date" />
+
+        </TableRow>
+        <TableRow>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:layout_column="1"
+            android:stretchColumns="1,3">
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:text="Floor"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:text="Beds"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+            </TableRow>
+        </TableLayout>
+        </TableRow>
+    </TableLayout>
 
 
 
-</RelativeLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <TableRow android:paddingBottom="5dp">
+
+            <CheckedTextView
+                android:id="@+id/fg_editProperty_furnished"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:checked="true"
+                android:gravity="center_vertical"
+                android:minHeight="30dp"
+                android:paddingTop="10dp"
+                android:text="Furnished" />
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_span="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Furniture details"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="3" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+
+            <CheckedTextView
+                android:id="@+id/fg_editProperty_electricalAppliances"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:checked="true"
+                android:gravity="center_vertical"
+                android:minHeight="30dp"
+                android:paddingTop="10dp"
+                android:text="Electrical Applciances" />
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="5dp">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_span="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Electrical appliances details"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="3" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow android:paddingBottom="5dp">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_span="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Other details"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="3" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add property"
+        android:textStyle="bold"/>
+</LinearLayout>

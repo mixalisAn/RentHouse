@@ -5,9 +5,9 @@
 
     <!-- HomeScreenFg Common -->
     <string name="fg_homescreen_buy">Buy</string>
-    <string name="fg_homescreen_sell">Sell</string>
-    <string name="fg_homescreen_for_buy">Buy</string>
-    <string name="fg_homescreen_for_sell">Sell</string>
+    <string name="fg_homescreen_rent">Rent</string>
+    <string name="fg_homescreen_for_buy">For Buy</string>
+    <string name="fg_homescreen_for_rent">For Rent</string>
     <string name="fg_homescreen_properties">My Properties</string>
     <string name="fg_homescreen_jobs">My Jobs</string>
     <string name="fg_homescreen_favorites">My Favorites</string>
@@ -18,4 +18,9 @@
     <string-array name="fg_propertyFilters_category">
         <item name="default">Property category</item>
     </string-array>
+
+    <string name="title_activity_my_properties">MyProperties</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

@@ -20,11 +20,15 @@ public class HomeScreenFg extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_homescreen, container, false);
+        Button buyButton = (Button) view.findViewById(R.id.fg_homescreen_buy);
+        Button sellButton = (Button) view.findViewById(R.id.fg_homescreen_sell);
+        Button myProperties = (Button) view.findViewById(R.id.fg_homescreen_myProperties);
         Button profileButton = (Button) view.findViewById(R.id.fg_homescreen_profile);
 
-
+        buyButton.setOnClickListener(this);
+        sellButton.setOnClickListener(this);
+        myProperties.setOnClickListener(this);
         profileButton.setOnClickListener(this);
-
 
         return view;
     }

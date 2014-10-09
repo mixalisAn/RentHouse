@@ -6,7 +6,10 @@
     <color name="theme_background">#963ac637</color>
 
     <!-- HomescreenFg -->
-    <color name="fg_homescreen_button">#ff205d1a</color>
+    <color name="fg_homescreen_button">#963ac637</color>
+
+    <!-- MyPropertiesFg -->
+    <color name="fg_myProperties_button">#ffc08940</color>
 
     <!-- PropertyFiltersFg -->
     <color name="fg_propertyFilters_button">#ffc08940</color>

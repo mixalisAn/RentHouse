@@ -129,8 +129,8 @@
                 android:minHeight="30dp"
                 android:checked="true"
                 android:gravity="center_vertical"
-                android:text="Electrical Appliance"
-                android:id="@+id/fg_propertyFilters_electricalAppliance" />
+                android:text="Electrical Appliances"
+                android:id="@+id/fg_propertyFilters_electricalAppliances" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

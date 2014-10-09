@@ -40,7 +40,7 @@
         android:paddingRight="15dp"
         android:paddingBottom="5dp"
         android:background="@drawable/homescreen_button"
-        android:text="@string/fg_homescreen_sell"
+        android:text="@string/fg_homescreen_rent"
         android:id="@+id/fg_homescreen_sell"
         android:layout_toRightOf="@id/fg_homescreen_buy" />
 
