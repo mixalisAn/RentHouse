@@ -1,10 +1,18 @@
-package gr.mc_anastasiou.renthouse;
+package gr.mc_anastasiou.renthouse.ui.home;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
+import gr.mc_anastasiou.renthouse.MyPropertiesAct;
+import gr.mc_anastasiou.renthouse.ProfileFg;
+import gr.mc_anastasiou.renthouse.PropertyFiltersFg;
+import gr.mc_anastasiou.renthouse.R;
+import gr.mc_anastasiou.renthouse.ui.account.AccountAct;
 
 
 public class HomeScreenAct extends Activity {
@@ -16,8 +24,28 @@ public class HomeScreenAct extends Activity {
         HomeScreenFg hsFragment = (HomeScreenFg) this.getFragmentManager().findFragmentByTag(HomeScreenFg.class.getSimpleName());
         if (hsFragment == null) {
             hsFragment = new HomeScreenFg();
+            this.getFragmentManager().beginTransaction().replace(android.R.id.content, hsFragment, HomeScreenFg.class.getSimpleName()).commit();
         }
-        this.getFragmentManager().beginTransaction().replace(android.R.id.content, hsFragment, HomeScreenFg.class.getSimpleName()).commit();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.act_homescreen, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.action_login:
+                Intent intent = new Intent(this, AccountAct.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void onButtonPressed(View view) {

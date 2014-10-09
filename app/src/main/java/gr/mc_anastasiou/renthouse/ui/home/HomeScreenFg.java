@@ -1,4 +1,4 @@
-package gr.mc_anastasiou.renthouse;
+package gr.mc_anastasiou.renthouse.ui.home;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import gr.mc_anastasiou.renthouse.R;
+import gr.mc_anastasiou.renthouse.ui.home.HomeScreenAct;
 
 public class HomeScreenFg extends Fragment implements View.OnClickListener{
     private HomeScreenAct hsActivity;

@@ -15,4 +15,10 @@
     <color name="fg_propertyFilters_button">#ffc08940</color>
     <color name="fg_propertyFilters_advancedButton">#5caddea9</color>
     <color name="fg_propertyFilters_bedsButtons">#ffc08940</color>
+
+    <!-- AccountFg -->
+    <color name="fg_account_button">#ffb6995d</color>
+
+    <!-- CreateAccountFg -->
+    <color name="fg_createAccount_button">#ff5459a9</color>
 </resources>

@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">RentHouse</string>
+    <string name="title_activity_my_properties">MyProperties</string>
+    <string name="title_activity_create_login">CreateLoginAct</string>
 
     <!-- HomeScreenFg Common -->
     <string name="fg_homescreen_buy">Buy</string>
@@ -15,11 +17,20 @@
     <string name="fg_homescreen_exit">Exit</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- PropertyFiltersFg -->
     <string-array name="fg_propertyFilters_category">
         <item name="default">Property category</item>
     </string-array>
 
-    <string name="title_activity_my_properties">MyProperties</string>
+    <!-- CreateAccountFg -->
+    <string name="fg_createAccount_spinnerPrompt">Select type</string>
+
+    <string-array name="fg_createAccount_type">
+        <item name="user">User</item>
+        <item name="agent">Agent</item>
+    </string-array>
+
+    <string name="title_activity_test">Test</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 

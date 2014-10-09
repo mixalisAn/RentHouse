@@ -16,8 +16,9 @@ public class MyPropertiesAct extends Activity {
         MyPropertiesFg mpFragment = (MyPropertiesFg) getFragmentManager().findFragmentByTag(MyPropertiesFg.class.getSimpleName());
         if(mpFragment == null){
             mpFragment = new MyPropertiesFg();
+            getFragmentManager().beginTransaction().replace(android.R.id.content, mpFragment, MyPropertiesFg.class.getSimpleName()).commit();
         }
-        getFragmentManager().beginTransaction().replace(android.R.id.content, mpFragment, MyPropertiesFg.class.getSimpleName()).commit();
+
     }
 
     public void onButtonPressed(View view) {
