@@ -5,6 +5,9 @@
     <string name="title_activity_my_properties">MyProperties</string>
     <string name="title_activity_create_login">CreateLoginAct</string>
 
+    <!-- Dialogs -->
+    <string name="common_dialog_ok">OK</string>
+    
     <!-- HomeScreenFg Common -->
     <string name="fg_homescreen_buy">Buy</string>
     <string name="fg_homescreen_rent">Rent</string>
@@ -24,6 +27,8 @@
 
     <!-- CreateAccountFg -->
     <string name="fg_createAccount_spinnerPrompt">Select type</string>
+    <string name="fg_createAccount_emptyfields">All fields required</string>
+    <string name="fg_createAccount_notEqualPasswords">Passwords are not equal</string>
 
     <string-array name="fg_createAccount_type">
         <item name="user">User</item>

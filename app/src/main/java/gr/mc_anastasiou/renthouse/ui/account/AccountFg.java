@@ -38,8 +38,8 @@ public class AccountFg extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_account, container, false);
-        TextView create = (TextView) view.findViewById(R.id.fg_createLogin_create);
-        TextView login = (TextView) view.findViewById(R.id.fg_createLogin_login);
+        TextView create = (TextView) view.findViewById(R.id.fg_account_create);
+        TextView login = (TextView) view.findViewById(R.id.fg_account_login);
 
         create.setOnClickListener(this);
         login.setOnClickListener(this);

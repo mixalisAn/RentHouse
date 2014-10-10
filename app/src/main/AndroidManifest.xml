@@ -28,6 +28,12 @@
             android:name=".ui.home.Test"
             android:label="@string/title_activity_test" >
         </activity>
+
+        <service
+            android:name=".communication.server.handler.RequestHandlerService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>

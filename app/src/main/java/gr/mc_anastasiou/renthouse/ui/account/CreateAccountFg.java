@@ -2,8 +2,9 @@ package gr.mc_anastasiou.renthouse.ui.account;
 
 
 
-import android.os.Bundle;
+import android.app.Activity;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import gr.mc_anastasiou.renthouse.R;
+import gr.mc_anastasiou.renthouse.communication.server.requests.SignUpRequest;
+import gr.mc_anastasiou.renthouse.ui.CommonDialog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,12 +25,25 @@ import gr.mc_anastasiou.renthouse.R;
  */
 public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
     private EditText email, password, passwordRetype;
+    private String selectedAccountType;
     private Spinner accountType;
+    private AccountAct aActivity;
 
     public CreateAccountFg() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        aActivity = (AccountAct)activity;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        aActivity = null;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,7 +74,7 @@ public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelec
      */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity(), String.valueOf(parent.getItemIdAtPosition(position)), Toast.LENGTH_LONG).show();
+        selectedAccountType = (String)parent.getItemAtPosition(position);
     }
 
     @Override
@@ -71,14 +86,20 @@ public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelec
     public void onClick(View view) {
         if(!TextUtils.isEmpty(email.getText())
                 && !TextUtils.isEmpty(password.getText())
-                && !TextUtils.isEmpty(passwordRetype.getText())){//TODO add spinner not prompt selected check
+                && !TextUtils.isEmpty(passwordRetype.getText())){
             if(password.equals(passwordRetype)){
-                //call activity method to make server request
+                aActivity.onSubmitPressed(new SignUpRequest(email.getText().toString(), password.getText().toString(), selectedAccountType));
             }else{
-                //display password error message
+                displayErrorDialog(getActivity().getString(R.string.fg_createAccount_notEqualPasswords));
             }
         }else{
-            //display empty fields message
+            displayErrorDialog(getActivity().getString(R.string.fg_createAccount_emptyfields));
         }
+    }
+
+    private void displayErrorDialog(String message){
+        CommonDialog dialog = CommonDialog.newInstance(message);
+        dialog.setCancelable(false);
+        dialog.show(getFragmentManager(), "errorDialog");
     }
 }
