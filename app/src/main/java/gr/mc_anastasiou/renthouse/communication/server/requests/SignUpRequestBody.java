@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by m.anastasiou on 10/10/2014.
  */
-public class SignUpRequest{
+public class SignUpRequestBody {
     @SerializedName("email")
     private String email;
     @SerializedName("password")
@@ -13,7 +13,7 @@ public class SignUpRequest{
     @SerializedName("accountType")
     private String accountType;
 
-    public SignUpRequest(String email, String password, String accountType){
+    public SignUpRequestBody(String email, String password, String accountType){
         this.email = email;
         this.password = password;
         this.accountType = accountType;

@@ -8,9 +8,11 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.View;
+import android.widget.Toast;
 
 import gr.mc_anastasiou.renthouse.R;
 import gr.mc_anastasiou.renthouse.communication.server.handler.RequestHandlerService;
+import gr.mc_anastasiou.renthouse.communication.server.requests.SignUpRequestBody;
 
 public class AccountAct extends Activity implements ServiceConnection, RequestHandlerService.OnServerResponse{
     private RequestHandlerService requestHandlerService;
@@ -52,29 +54,31 @@ public class AccountAct extends Activity implements ServiceConnection, RequestHa
         }
     }
 
-    <T> void onSubmitPressed(T requestBody){
+    void onSubmitPressed(SignUpRequestBody body){
         if(requestHandlerService != null){
-            requestHandlerService.makeServerRequest(requestBody);
+            requestHandlerService.makeSignUpRequest(body);
         }
     }
 
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
         requestHandlerService = ((RequestHandlerService.LocalBinder) service).getService();
+        requestHandlerService.serverResponseInterface = this;
     }
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
+        requestHandlerService.serverResponseInterface = null;
         requestHandlerService = null;
     }
 
     @Override
-    public void onServerResult() {
-
+    public void onServerResult(String response) {
+        Toast.makeText(this, response, Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onServerError() {
-
+    public void onServerError(String errMsg) {
+        Toast.makeText(this, errMsg, Toast.LENGTH_LONG).show();
     }
 }

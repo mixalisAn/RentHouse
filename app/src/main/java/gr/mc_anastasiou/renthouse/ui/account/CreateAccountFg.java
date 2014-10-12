@@ -16,7 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import gr.mc_anastasiou.renthouse.R;
-import gr.mc_anastasiou.renthouse.communication.server.requests.SignUpRequest;
+import gr.mc_anastasiou.renthouse.communication.server.requests.SignUpRequestBody;
 import gr.mc_anastasiou.renthouse.ui.CommonDialog;
 
 /**
@@ -87,8 +87,8 @@ public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelec
         if(!TextUtils.isEmpty(email.getText())
                 && !TextUtils.isEmpty(password.getText())
                 && !TextUtils.isEmpty(passwordRetype.getText())){
-            if(password.equals(passwordRetype)){
-                aActivity.onSubmitPressed(new SignUpRequest(email.getText().toString(), password.getText().toString(), selectedAccountType));
+            if(password.getText().toString().equals(passwordRetype.getText().toString())){
+                aActivity.onSubmitPressed(new SignUpRequestBody(email.getText().toString(), password.getText().toString(), selectedAccountType));
             }else{
                 displayErrorDialog(getActivity().getString(R.string.fg_createAccount_notEqualPasswords));
             }

@@ -15,7 +15,7 @@ public class VolleyProvider {
     private Context ctx;
 
     private VolleyProvider(Context ctx) {
-        ctx = ctx.getApplicationContext();
+        this.ctx = ctx.getApplicationContext();
     }
 
     public static VolleyProvider getInstance(Context ctx) {
