@@ -23,20 +23,20 @@ import gr.mc_anastasiou.renthouse.ui.CommonDialog;
  * A simple {@link Fragment} subclass.
  *
  */
-public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class SignUpFg extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
     private EditText email, password, passwordRetype;
     private String selectedAccountType;
     private Spinner accountType;
-    private AccountAct aActivity;
+    private SignUpAct aActivity;
 
-    public CreateAccountFg() {
+    public SignUpFg() {
         // Required empty public constructor
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        aActivity = (AccountAct)activity;
+        aActivity = (SignUpAct)activity;
     }
 
     @Override
@@ -48,12 +48,12 @@ public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelec
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fg_create_account, container, false);
-        email = (EditText) view.findViewById(R.id.fg_createAccount_email);
-        password = (EditText) view.findViewById(R.id.fg_createAccount_password);
-        passwordRetype = (EditText) view.findViewById(R.id.fg_createAccount_passwordRetype);
-        accountType = (Spinner) view.findViewById(R.id.fg_createAccount_accountType);
-        TextView submit = (TextView) view.findViewById(R.id.fg_createAccount_submit);
+        View view = inflater.inflate(R.layout.fg_signup, container, false);
+        email = (EditText) view.findViewById(R.id.fg_signup_email);
+        password = (EditText) view.findViewById(R.id.fg_signup_password);
+        passwordRetype = (EditText) view.findViewById(R.id.fg_signup_passwordRetype);
+        accountType = (Spinner) view.findViewById(R.id.fg_signup_accountType);
+        TextView submit = (TextView) view.findViewById(R.id.fg_signup_submit);
 
         //set view's listeners
         submit.setOnClickListener(this);
@@ -61,7 +61,7 @@ public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelec
 
         //Create spinner adapter with string-array resources
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.fg_createAccount_type, android.R.layout.simple_dropdown_item_1line);
+                R.array.fg_signup_type, android.R.layout.simple_dropdown_item_1line);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         accountType.setAdapter(adapter);
@@ -90,10 +90,10 @@ public class CreateAccountFg extends Fragment implements AdapterView.OnItemSelec
             if(password.getText().toString().equals(passwordRetype.getText().toString())){
                 aActivity.onSubmitPressed(new SignUpRequestBody(email.getText().toString(), password.getText().toString(), selectedAccountType));
             }else{
-                displayErrorDialog(getActivity().getString(R.string.fg_createAccount_notEqualPasswords));
+                displayErrorDialog(getActivity().getString(R.string.fg_signup_notEqualPasswords));
             }
         }else{
-            displayErrorDialog(getActivity().getString(R.string.fg_createAccount_emptyfields));
+            displayErrorDialog(getActivity().getString(R.string.fg_signup_emptyfields));
         }
     }
 

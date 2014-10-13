@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 public class VolleyErrorHandler {
     @SerializedName("errCode")
     private int errCode;
-    @SerializedName("errMessage")
+    @SerializedName("errMsg")
     private String errMessage;
 
     public VolleyErrorHandler(){}

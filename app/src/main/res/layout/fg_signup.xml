@@ -29,7 +29,7 @@
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:id="@+id/fg_createAccount_email"/>
+            android:id="@+id/fg_signup_email"/>
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:id="@+id/fg_createAccount_password"/>
+            android:id="@+id/fg_signup_password"/>
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:id="@+id/fg_createAccount_passwordRetype"/>
+            android:id="@+id/fg_signup_passwordRetype"/>
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -61,8 +61,8 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:prompt="@string/fg_createAccount_spinnerPrompt"
-            android:id="@+id/fg_createAccount_accountType"/>
+            android:prompt="@string/fg_signup_spinnerPrompt"
+            android:id="@+id/fg_signup_accountType"/>
         </LinearLayout>
 
 
@@ -71,8 +71,8 @@
         android:layout_height="50dp"
         android:text="Submit"
         android:layout_alignParentBottom="true"
-        android:background="@color/fg_createAccount_button"
+        android:background="@color/fg_signup_button"
         android:gravity="center"
         android:textSize="20sp"
-        android:id="@+id/fg_createAccount_submit"/>
+        android:id="@+id/fg_signup_submit"/>
 </RelativeLayout>

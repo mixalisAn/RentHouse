@@ -1,5 +1,7 @@
 package gr.mc_anastasiou.renthouse.communication.server.volley;
 
+import android.util.Log;
+
 import com.android.volley.NetworkError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.NoConnectionError;
@@ -36,6 +38,8 @@ public class JsonListener<T> implements Response.Listener<T>, Response.ErrorList
         } else {
             if (response.data != null) {
                 try {
+                    String data = new String(response.data);
+                    Log.d("Data: ", data);
                     VolleyErrorHandler errHandler = gson.fromJson(new String(response.data), VolleyErrorHandler.class);
                     errCode = errHandler.getErrCode();
                     errMessage = errHandler.getErrMessage();

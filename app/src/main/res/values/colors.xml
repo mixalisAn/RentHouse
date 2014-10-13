@@ -3,7 +3,7 @@
     <!-- global colors -->
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
-    <color name="theme_background">#963ac637</color>
+    <color name="theme_background">#ff3e903a</color>
 
     <!-- HomescreenFg -->
     <color name="fg_homescreen_button">#963ac637</color>
@@ -19,6 +19,9 @@
     <!-- AccountFg -->
     <color name="fg_account_button">#ffb6995d</color>
 
-    <!-- CreateAccountFg -->
-    <color name="fg_createAccount_button">#ff5459a9</color>
+    <!-- SignUpFg -->
+    <color name="fg_signup_button">#ff5459a9</color>
+
+    <!-- LoginDg -->
+    <color name="dg_login_title">#ff246ca9</color>
 </resources>

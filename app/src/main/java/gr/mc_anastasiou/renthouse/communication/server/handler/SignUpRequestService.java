@@ -14,7 +14,7 @@ import gr.mc_anastasiou.renthouse.communication.server.volley.JsonListener;
 import gr.mc_anastasiou.renthouse.communication.server.volley.UiListener;
 import gr.mc_anastasiou.renthouse.communication.server.volley.VolleyProvider;
 
-public class RequestHandlerService extends Service {
+public class SignUpRequestService extends Service {
     private final LocalBinder localBinder = new LocalBinder();
     public OnServerResponse serverResponseInterface;
 
@@ -27,7 +27,7 @@ public class RequestHandlerService extends Service {
     public void makeSignUpRequest(SignUpRequestBody requestBody){
         String  signupReqTag = "signup_req";
 
-        String url = "http://192.168.2.2/signup.php";
+        String url = "http://10.77.0.167/signup.php";
         String body = new GsonBuilder().create().toJson(requestBody);
 
         GsonClassRequest<String> gsonRequest = new GsonClassRequest<String>(
@@ -51,8 +51,8 @@ public class RequestHandlerService extends Service {
     }
 
     public class LocalBinder extends Binder {
-        public RequestHandlerService getService(){
-            return RequestHandlerService.this;
+        public SignUpRequestService getService(){
+            return SignUpRequestService.this;
         }
     }
 
