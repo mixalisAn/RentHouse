@@ -17,17 +17,19 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import gr.mc_anastasiou.renthouse.MyPropertiesAct;
-import gr.mc_anastasiou.renthouse.ProfileFg;
 import gr.mc_anastasiou.renthouse.PropertyFiltersFg;
 import gr.mc_anastasiou.renthouse.R;
 import gr.mc_anastasiou.renthouse.communication.server.handler.LoginRequestService;
+import gr.mc_anastasiou.renthouse.communication.server.handler.OnServerResponseInterface;
 import gr.mc_anastasiou.renthouse.communication.server.requests.LoginRequestBody;
 import gr.mc_anastasiou.renthouse.communication.server.requests.LoginRequestResult;
 import gr.mc_anastasiou.renthouse.core.Singleton;
 import gr.mc_anastasiou.renthouse.ui.account.SignUpAct;
+import gr.mc_anastasiou.renthouse.ui.dialogs.NotLoggedInDialog;
+import gr.mc_anastasiou.renthouse.ui.profile.ProfileAct;
 
 
-public class HomeScreenAct extends Activity implements ServiceConnection, LoginRequestService.OnServerResponse{
+public class HomeScreenAct extends Activity implements ServiceConnection, OnServerResponseInterface{
     private LoginRequestService loginRequestService;
 
     @Override
@@ -109,7 +111,13 @@ public class HomeScreenAct extends Activity implements ServiceConnection, LoginR
         builder.create().show();
     }
 
+    private void displayNotLoggedInDialog(){
+        NotLoggedInDialog dialog = new NotLoggedInDialog();
+        dialog.show(getFragmentManager(), "notLoggedInDialog");
+    }
+
     public void onButtonPressed(View view) {
+        Intent intent;
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         switch (view.getId()) {
             case R.id.fg_homescreen_buy:
@@ -121,15 +129,37 @@ public class HomeScreenAct extends Activity implements ServiceConnection, LoginR
                 ft.replace(android.R.id.content, pfFragment, PropertyFiltersFg.class.getSimpleName()).commit();
                 break;
             case R.id.fg_homescreen_myProperties:
-                Intent intent = new Intent(this, MyPropertiesAct.class);
-                startActivity(intent);
+                if(Singleton.getInstance().getLoginSession().isUserLoggedIn()){
+                    intent = new Intent(this, MyPropertiesAct.class);
+                    startActivity(intent);
+                }else{
+                    displayNotLoggedInDialog();
+                }
                 break;
             case R.id.fg_homescreen_profile:
-                ProfileFg pFragment = (ProfileFg) getFragmentManager().findFragmentByTag(ProfileFg.class.getSimpleName());
-                if (pFragment == null) {
-                    pFragment = new ProfileFg();
+                if(Singleton.getInstance().getLoginSession().isUserLoggedIn()){
+                    intent = new Intent(this, ProfileAct.class);
+                    startActivity(intent);
+                }else{
+                    displayNotLoggedInDialog();
                 }
-                ft.replace(android.R.id.content, pFragment, ProfileFg.class.getSimpleName()).commit();
+                break;
+            case R.id.fg_homescreen_exit:
+                this.finish();
+                break;
+        }
+    }
+
+
+
+    public void onNotLoggedInDgBtnPressed(int id){
+        switch (id){
+            case DialogInterface.BUTTON_NEUTRAL:
+                Intent intent = new Intent(this, SignUpAct.class);
+                startActivity(intent);
+                break;
+            case DialogInterface.BUTTON_POSITIVE:
+                displayLoginDialog();
                 break;
         }
     }
@@ -147,9 +177,10 @@ public class HomeScreenAct extends Activity implements ServiceConnection, LoginR
     }
 
     @Override
-    public void onServerResult(LoginRequestResult result) {
-        Singleton.getInstance().setProfileDetailsId(result.getProfileDetailsId());
-        Singleton.getInstance().setAccountId(result.getAccountId());
+    public <T> void onServerResult(T tResult) {
+        LoginRequestResult result = LoginRequestResult.class.cast(tResult);
+        Singleton.getInstance().getLoginSession().setNewSession(result.getProfileDetailsId(),
+                result.getAccountId(),result.getAccountType());
         Toast.makeText(this, "Succesfully Logged in: AccountId = " + String.valueOf(result.getAccountId()), Toast.LENGTH_LONG).show();
     }
 

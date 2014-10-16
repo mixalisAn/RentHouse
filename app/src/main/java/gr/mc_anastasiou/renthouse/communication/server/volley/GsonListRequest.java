@@ -5,6 +5,7 @@ import com.android.volley.Response;
 import com.google.gson.GsonBuilder;
 
 import java.lang.reflect.Type;
+import java.util.Map;
 
 /**
  * Gson request for object lists.
@@ -14,8 +15,8 @@ import java.lang.reflect.Type;
 public class GsonListRequest<T> extends GsonRequest<T> {
 	private Type mType;
 	
-	public GsonListRequest(int method, String url, String requestBody, Type type, JsonListener<T> listener) {
-        super(method, url, requestBody, listener, listener);
+	public GsonListRequest(int method, String url, String requestBody, Type type, JsonListener<T> listener, Map<String, String> headers) {
+        super(method, url, requestBody, listener, listener, headers);
         mType = type;
     }
 	

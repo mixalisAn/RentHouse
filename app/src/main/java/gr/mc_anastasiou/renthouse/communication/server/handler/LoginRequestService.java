@@ -17,13 +17,7 @@ import gr.mc_anastasiou.renthouse.communication.server.volley.VolleyProvider;
 
 public class LoginRequestService extends Service {
     private final LocalBinder localBinder = new LocalBinder();
-    public OnServerResponse serverResponseInterface;
-
-    @Override
-    public IBinder onBind(Intent intent) {
-        return localBinder;
-    }
-
+    public OnServerResponseInterface serverResponseInterface;
 
     public void makeLoginRequest(LoginRequestBody requestBody){
         String  loginReqTag = "login_req";
@@ -46,19 +40,19 @@ public class LoginRequestService extends Service {
                     serverResponseInterface.onServerError(errMsg);
                 }
             }
-        }));
+        }), null);
         // Adding request to request queue
         VolleyProvider.getInstance(this).addRequest(gsonRequest, loginReqTag);
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return localBinder;
     }
 
     public class LocalBinder extends Binder {
         public LoginRequestService getService(){
             return LoginRequestService.this;
         }
-    }
-
-    public interface OnServerResponse{
-        public void onServerResult(LoginRequestResult result);
-        public void onServerError(String errMessage);
     }
 }

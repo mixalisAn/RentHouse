@@ -8,10 +8,11 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.widget.Toast;
 
+import gr.mc_anastasiou.renthouse.communication.server.handler.OnServerResponseInterface;
 import gr.mc_anastasiou.renthouse.communication.server.handler.SignUpRequestService;
 import gr.mc_anastasiou.renthouse.communication.server.requests.SignUpRequestBody;
 
-public class SignUpAct extends Activity implements ServiceConnection, SignUpRequestService.OnServerResponse{
+public class SignUpAct extends Activity implements ServiceConnection, OnServerResponseInterface{
     private SignUpRequestService signUpRequestService;
 
     @Override
@@ -42,7 +43,7 @@ public class SignUpAct extends Activity implements ServiceConnection, SignUpRequ
 
     void onSubmitPressed(SignUpRequestBody body){
         if(signUpRequestService != null){
-            signUpRequestService.makeSignUpRequest(body);
+            signUpRequestService.createAccountRequest(body);
         }
     }
 
@@ -59,8 +60,9 @@ public class SignUpAct extends Activity implements ServiceConnection, SignUpRequ
     }
 
     @Override
-    public void onServerResult(String response) {
-        Toast.makeText(this, response, Toast.LENGTH_LONG).show();
+    public <T> void onServerResult(T tResult) {
+        String result = String.class.cast(tResult);
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
     }
 
     @Override

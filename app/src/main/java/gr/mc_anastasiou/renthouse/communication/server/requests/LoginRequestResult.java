@@ -10,6 +10,8 @@ public class LoginRequestResult {
     private int accountId;
     @SerializedName("profileDetailsId")
     private int profileDetailsId;
+    @SerializedName("accountType")
+    private String accountType;
 
     public LoginRequestResult(){
 
@@ -21,5 +23,9 @@ public class LoginRequestResult {
 
     public int getProfileDetailsId() {
         return profileDetailsId;
+    }
+
+    public String getAccountType() {
+        return accountType;
     }
 }

@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import gr.mc_anastasiou.renthouse.R;
 import gr.mc_anastasiou.renthouse.communication.server.requests.SignUpRequestBody;
-import gr.mc_anastasiou.renthouse.ui.CommonDialog;
+import gr.mc_anastasiou.renthouse.ui.dialogs.CommonDialog;
 
 /**
  * A simple {@link Fragment} subclass.

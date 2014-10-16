@@ -1,34 +1,22 @@
 package gr.mc_anastasiou.renthouse.core;
 
 /**
- * Created by m.anastasiou on 10/13/2014.
+ * Created by m.anastasiou on 10/14/2014.
  */
-public class Singleton {
-    private static Singleton instance;
-    private boolean userLoggedIn = false;
-    private int profileDetailsId, accountId;
+public class Singleton implements GlobalVariables{
+    private static Singleton instance = new Singleton();
 
-    public static Singleton getInstance(){
-        if(instance == null){
-            instance = new Singleton();
-        }
+    private LoginSession loginSession;
+
+    public static Singleton getInstance() {
         return instance;
     }
 
-    public void setProfileDetailsId(int id){
-        userLoggedIn = true;
-        this.profileDetailsId = id;
+    private Singleton() {
+        loginSession = LoginSession.getInstance();
     }
 
-    public int getProfileDetailsId(){
-        return profileDetailsId;
-    }
-
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
-    }
-
-    public int getAccountId() {
-        return accountId;
+    public LoginSession getLoginSession(){
+        return this.loginSession;
     }
 }

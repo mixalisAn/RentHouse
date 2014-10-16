@@ -4,6 +4,8 @@ import com.android.volley.Cache.Entry;
 import com.android.volley.Response;
 import com.google.gson.GsonBuilder;
 
+import java.util.Map;
+
 
 /**
  * Gson request for single objects.
@@ -14,8 +16,8 @@ public class GsonClassRequest<T> extends GsonRequest<T> {
     
 
     public GsonClassRequest(int method, String url, String requestBody, Class<T> responseClass, 
-    		JsonListener<T> listener) {
-        super(method, url, requestBody, listener, listener);
+    		JsonListener<T> listener, Map<String, String> headers) {
+        super(method, url, requestBody, listener, listener, headers);
         mResponseClass = responseClass;        
     }
     

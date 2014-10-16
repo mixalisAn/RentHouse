@@ -1,4 +1,4 @@
-package gr.mc_anastasiou.renthouse.ui;
+package gr.mc_anastasiou.renthouse.ui.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

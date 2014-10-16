@@ -7,7 +7,7 @@
 
     <!-- Dialogs -->
     <string name="common_dialog_ok">OK</string>
-    
+
     <!-- HomeScreenFg Common -->
     <string name="fg_homescreen_buy">Buy</string>
     <string name="fg_homescreen_rent">Rent</string>
@@ -38,5 +38,6 @@
     <string name="title_activity_test">Test</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_profile">ProfileAct</string>
 
 </resources>

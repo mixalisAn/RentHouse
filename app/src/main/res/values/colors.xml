@@ -24,4 +24,7 @@
 
     <!-- LoginDg -->
     <color name="dg_login_title">#ff246ca9</color>
+
+    <!-- ProfileFg -->
+    <color name="fg_profile_button">#ffc08940</color>
 </resources>

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import gr.mc_anastasiou.renthouse.R;
-import gr.mc_anastasiou.renthouse.ui.home.HomeScreenAct;
 
 public class HomeScreenFg extends Fragment implements View.OnClickListener{
     private HomeScreenAct hsActivity;
@@ -27,11 +26,13 @@ public class HomeScreenFg extends Fragment implements View.OnClickListener{
         Button sellButton = (Button) view.findViewById(R.id.fg_homescreen_sell);
         Button myProperties = (Button) view.findViewById(R.id.fg_homescreen_myProperties);
         Button profileButton = (Button) view.findViewById(R.id.fg_homescreen_profile);
+        Button exitButton = (Button) view.findViewById(R.id.fg_homescreen_exit);
 
         buyButton.setOnClickListener(this);
         sellButton.setOnClickListener(this);
         myProperties.setOnClickListener(this);
         profileButton.setOnClickListener(this);
+        exitButton.setOnClickListener(this);
 
         return view;
     }

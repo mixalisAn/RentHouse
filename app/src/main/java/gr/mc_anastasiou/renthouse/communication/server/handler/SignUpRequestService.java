@@ -16,7 +16,7 @@ import gr.mc_anastasiou.renthouse.communication.server.volley.VolleyProvider;
 
 public class SignUpRequestService extends Service {
     private final LocalBinder localBinder = new LocalBinder();
-    public OnServerResponse serverResponseInterface;
+    public OnServerResponseInterface serverResponseInterface;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -24,7 +24,7 @@ public class SignUpRequestService extends Service {
     }
 
 
-    public void makeSignUpRequest(SignUpRequestBody requestBody){
+    public void createAccountRequest(SignUpRequestBody requestBody){
         String  signupReqTag = "signup_req";
 
         String url = "http://10.77.0.167/signup.php";
@@ -45,19 +45,14 @@ public class SignUpRequestService extends Service {
                     serverResponseInterface.onServerError(errMsg);
                 }
             }
-        }));
+        }), null);
         // Adding request to request queue
         VolleyProvider.getInstance(this).addRequest(gsonRequest, signupReqTag);
     }
 
     public class LocalBinder extends Binder {
-        public SignUpRequestService getService(){
+        public SignUpRequestService getService() {
             return SignUpRequestService.this;
         }
-    }
-
-    public interface OnServerResponse{
-        public void onServerResult(String result);
-        public void onServerError(String errMessage);
     }
 }

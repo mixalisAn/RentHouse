@@ -37,6 +37,17 @@
             android:enabled="true"
             android:exported="false" >
         </service>
+
+        <activity
+            android:name=".ui.profile.ProfileAct"
+            android:label="@string/title_activity_profile" >
+        </activity>
+
+        <service
+            android:name=".communication.server.handler.ProfileDetailsRequestService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>
